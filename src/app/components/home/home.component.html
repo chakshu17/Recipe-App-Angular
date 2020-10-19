@@ -1,3 +1,36 @@
-<div class="recipe">
-  <app-card></app-card>
+<div fxHide.lt-md>
+  <div class="inputData">
+    <form>
+      <mat-form-field >
+        <input matInput type="text" placeholder="Enter The Food Item" />
+      </mat-form-field>
+      <button mat-raised-button color="primary" style="font-size: 20px;padding:5px 30px;border-radius: 10px;" (click)="fetchData()">
+        Data
+      </button>
+    </form>
+  </div>
+
+  <div class="recipe">
+    <div *ngFor="let n of number" >
+      <app-card></app-card>
+    </div>
+  </div>
+</div>
+
+
+<div fxHide.gt-md>
+  <div class="inputDataMobile">
+    <form>
+      <mat-form-field >
+        <input matInput type="text" placeholder="Enter The Food Item" />
+      </mat-form-field>
+      <button mat-raised-button color="primary" style="font-size: 16px;padding:5px 20px;border-radius: 10px;" (click)="fetchData()">
+        Data
+      </button>
+    </form>
+  </div>
+
+    <div style="margin: 5%;" *ngFor="let n of number" >
+      <app-card></app-card>
+    </div>
 </div>
