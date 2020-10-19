@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+
+import { NgForm } from '@angular/forms';
 import { DataServiceService } from '../../service/Data/data-service.service';
 @Component({
   selector: 'app-home',
@@ -12,8 +14,11 @@ export class HomeComponent implements OnInit {
   APP_ID = '224efa3a';
   APP_KEY = 'fb69ef518fc400afede708bc45c9545b';
   query = 'chicken';
-  number=[1,2,3,4,5]
+  card: boolean = false;
   ngOnInit(): void {
+
+  }
+  fetchData(f:NgForm) {
     // this.http
     //   .get(
     //     `https://api.edamam.com/search?q=${this.query}&app_id=${this.APP_ID}&app_key=${this.APP_KEY}`
@@ -22,12 +27,9 @@ export class HomeComponent implements OnInit {
     //     this.data = re.hits;
     //     console.log(this.data);
     //   });
+    console.log("home after enter",f.value.foodItem);
 
-
-    // this.service.getData()
-  }
-  fetchData(){
-    this.service.setData(this.data)
+    this.service.setData(f.value.foodItem);
+    this.card = true;
   }
 }
-

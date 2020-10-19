@@ -9,7 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './module/material/material.module'
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpClientModule } from '@angular/common/http';
-
+import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
@@ -24,7 +24,8 @@ import { HomeComponent } from './components/home/home.component';
     BrowserAnimationsModule,
     MaterialModule,
     FlexLayoutModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
 
   ],
   providers: [],

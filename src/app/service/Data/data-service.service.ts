@@ -9,6 +9,7 @@ export class DataServiceService {
   apiData:any;
   getData(){
     console.log('Heloo',this.apiData);
+    return this.apiData;
   }
 
   setData(data:any){
