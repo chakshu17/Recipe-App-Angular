@@ -8,12 +8,8 @@
   flex-direction: column;
   background: white;
   align-items: center;
-  min-width: 50%;
+  max-width: 600px;
   box-shadow: 0 5px 15px rgba(0, 0, 0,);
-}
-
-.cardDesktop mat-card-content{
-  margin-top: 3%;
 }
 
 // .cardMobile{
