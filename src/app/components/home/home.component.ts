@@ -26,9 +26,19 @@ export class HomeComponent implements OnInit {
       .subscribe((re) => {
         this.data = re;
         console.log(this.data.hits);
-
         this.service.setData(this.data.hits);
-
+        this.card = true;
+      });
+  }
+  fetchDataMob(g:NgForm){
+    this.http
+      .get(
+        `https://api.edamam.com/search?q=${g.value.foodItem}&app_id=${this.APP_ID}&app_key=${this.APP_KEY}`
+      )
+      .subscribe((re) => {
+        this.data = re;
+        console.log(this.data.hits);
+        this.service.setData(this.data.hits);
         this.card = true;
       });
   }

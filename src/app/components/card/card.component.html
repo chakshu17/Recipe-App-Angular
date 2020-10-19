@@ -1,4 +1,4 @@
-<div fxHide.lt-md>
+<div class="recipe" fxHide.lt-md>
   <div *ngFor="let x of apiData">
     <mat-card class="cardDesktop">
       <mat-card-title style="margin-top: 2%">
@@ -7,15 +7,15 @@
 
       <mat-card-content style="margin-top: 5%; text-align: center">
         <ul>
-          {{ x.recipe.ingredientLines.map(lines=>{
-          <li>lines</li>
-          }) }}
+          <li>
+            {{ x.recipe.ingredientLines}}
+          </li>
         </ul>
         <p style="margin: 20px; padding: 10px">
           Calories: {{ x.recipe.calories }}
         </p>
         <img
-          style="width: 300px; height: 200px"
+          style="width: 350px; height: 250px; border-radius: 10px"
           src="{{ x.recipe.image }}"
           alt="Food Image"
         />
@@ -25,20 +25,27 @@
 </div>
 
 <div fxHide.gt-md>
-  <mat-card class="cardMobile">
-    <mat-card-title> Title </mat-card-title>
+  <div *ngFor="let y of apiData">
+    <mat-card class="cardMobile">
+      <mat-card-title style="margin-top: 2%">
+        {{ y.recipe.label }}
+      </mat-card-title>
 
-    <mat-card-content>
-      asssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
-      sssasssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss sss
-      <ul>
-        <li>a</li>
-        <li>a</li>
-        <li>a</li>
-        <li>a</li>
-      </ul>
-      <p>Calories</p>
-      <img src="" alt="" />
-    </mat-card-content>
-  </mat-card>
+      <mat-card-content style="margin-top: 5%; text-align: center">
+        <ul>
+          {{
+            y.recipe.ingredientLines
+          }}
+        </ul>
+        <p style="margin: 20px; padding: 10px">
+          Calories: {{ y.recipe.calories }}
+        </p>
+        <img
+          style="width: 300px; height: 200px"
+          src="{{ y.recipe.image }}"
+          alt="Food Image"
+        />
+      </mat-card-content>
+    </mat-card>
+  </div>
 </div>

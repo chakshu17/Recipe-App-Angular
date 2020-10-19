@@ -22,30 +22,38 @@
     </form>
   </div>
 
-  <div class="recipe">
-    <div *ngIf="card===true">
-      <app-card></app-card>
-    </div>
+  <div *ngIf="card === true">
+    <app-card></app-card>
   </div>
 </div>
 
-<!-- <div fxHide.gt-md>
+<div fxHide.gt-md>
   <div class="inputDataMobile">
-    <form>
+    <form (ngSubmit)="fetchDataMob(g)" #g="ngForm">
       <mat-form-field>
-        <input matInput type="text" placeholder="Enter The Food Item" />
+        <input
+          matInput
+          name="foodItem"
+          value=""
+          type="text"
+          placeholder="Enter The Food Item"
+          ngModel
+        />
       </mat-form-field>
       <button
         mat-raised-button
+        type="submit"
         color="primary"
-        style="font-size: 16px; padding: 5px 20px; border-radius: 10px"
+        style="font-size: 18px; padding: 5px 25px; border-radius: 10px"
       >
         Data
       </button>
     </form>
   </div>
 
-  <div style="margin: 5%" >
-    <app-card></app-card>
+  <div class="recipe">
+    <div *ngIf="card === true">
+      <app-card></app-card>
+    </div>
   </div>
-</div> -->
+</div>
