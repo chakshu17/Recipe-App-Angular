@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "recipeApp"
+    }
+  },
+  "defaultProject": "recipeApp",
+  "cli": {
+    "analytics": "8eee3d38-d6f8-41ad-9872-3db74b856243"
+  }
 }
