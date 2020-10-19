@@ -11,25 +11,25 @@ import { DataServiceService } from '../../service/Data/data-service.service';
 export class HomeComponent implements OnInit {
   constructor(private http: HttpClient, private service: DataServiceService) {}
   data: any;
+
   APP_ID = '224efa3a';
   APP_KEY = 'fb69ef518fc400afede708bc45c9545b';
-  query = 'chicken';
+
   card: boolean = false;
-  ngOnInit(): void {
+  ngOnInit(): void {}
 
-  }
-  fetchData(f:NgForm) {
-    // this.http
-    //   .get(
-    //     `https://api.edamam.com/search?q=${this.query}&app_id=${this.APP_ID}&app_key=${this.APP_KEY}`
-    //   )
-    //   .subscribe((re) => {
-    //     this.data = re.hits;
-    //     console.log(this.data);
-    //   });
-    console.log("home after enter",f.value.foodItem);
+  fetchData(f: NgForm) {
+    this.http
+      .get(
+        `https://api.edamam.com/search?q=${f.value.foodItem}&app_id=${this.APP_ID}&app_key=${this.APP_KEY}`
+      )
+      .subscribe((re) => {
+        this.data = re;
+        console.log(this.data.hits);
 
-    this.service.setData(f.value.foodItem);
-    this.card = true;
+        this.service.setData(this.data.hits);
+
+        this.card = true;
+      });
   }
 }

@@ -10,10 +10,10 @@ export class CardComponent implements OnInit {
 
   constructor(private service:DataServiceService) { }
   apiData
-  ngOnInit(): void {
-    this.apiData= this.service.getData();
-    console.log( "Card", this.apiData);
 
+  ngOnInit(): void {
+    this.apiData= this.service.getData()
+    // console.log( "Card", this.apiData); 
   }
 
 }
