@@ -25,24 +25,24 @@
 </div>
 
 <div fxHide.gt-md>
-  <div *ngFor="let y of apiData">
+  <div *ngFor="let x of apiData">
     <mat-card class="cardMobile">
       <mat-card-title style="margin-top: 2%">
-        {{ y.recipe.label }}
+        {{ x.recipe.label }}
       </mat-card-title>
 
       <mat-card-content style="margin-top: 5%; text-align: center">
         <ul>
           {{
-            y.recipe.ingredientLines
+            x.recipe.ingredientLines
           }}
         </ul>
         <p style="margin: 20px; padding: 10px">
-          Calories: {{ y.recipe.calories }}
+          Calories: {{ x.recipe.calories }}
         </p>
         <img
           style="width: 300px; height: 200px"
-          src="{{ y.recipe.image }}"
+          src="{{ x.recipe.image }}"
           alt="Food Image"
         />
       </mat-card-content>
