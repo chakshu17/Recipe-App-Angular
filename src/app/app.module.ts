@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { CardComponent } from './components/card/card.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { MaterialModule } from './module/material/material.module'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -14,7 +16,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MaterialModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
