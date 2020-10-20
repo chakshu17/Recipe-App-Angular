@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { DataServiceService } from 'src/app/service/Data/data-service.service';
 
 @Component({
@@ -6,13 +6,15 @@ import { DataServiceService } from 'src/app/service/Data/data-service.service';
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.scss'],
 })
-export class CardComponent implements OnInit {
+export class CardComponent implements OnInit,OnDestroy {
   constructor(private service: DataServiceService) {}
   apiData;
 
   ngOnInit(): void {
     this.apiData = this.service.getData();
-    this.service.setData([]);
     // console.log( "Card", this.apiData);
+  }
+  ngOnDestroy(){
+    this.service.setData(null)
   }
 }
