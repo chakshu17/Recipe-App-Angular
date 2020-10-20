@@ -6,7 +6,7 @@
       </mat-card-title>
 
       <mat-card-content class="cardContent">
-        <h2 style="font-weight: 500">Ingredients:</h2>
+        <h2 style="font-weight: 500;text-align: left;">Ingredients:</h2>
         <ul style="text-align: left">
           <li *ngFor="let lines of x.recipe.ingredients">
             {{ lines.text }}
@@ -48,7 +48,7 @@
           font-weight: 300;
         "
       >
-        <h2 style="font-weight: 500">Ingredients:</h2>
+        <h2 style="font-weight: 500;text-align: left">Ingredients:</h2>
         <ul style="text-align: left">
           <li *ngFor="let lines of x.recipe.ingredients">
             {{ lines.text }}
