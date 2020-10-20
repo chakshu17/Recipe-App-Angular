@@ -1,6 +1,6 @@
 .recipe {
-	display: flex;
-	justify-content: space-around;
+  display: flex;
+  justify-content: space-around;
   flex-wrap: wrap;
 }
 .cardDesktop {
@@ -9,13 +9,15 @@
   display: flex;
   margin: 20px;
   padding: 10px;
+  font-size: 18px;
   justify-content: space-around;
   flex-direction: column;
   background: white;
   align-items: center;
-  max-width: 500px;
+  max-width: 450px;
   min-width: 400px;
-  min-height: 540px;
+  min-height: 550px;
+  max-height: 750px;
   box-shadow: 0 5px 15px rgba(0, 0, 0);
 }
 
@@ -23,11 +25,28 @@
   border-radius: 10px;
   display: flex;
   margin: 35px 5px;
-  padding: 5px;
+  padding: 10px;
   justify-content: space-around;
   flex-direction: column;
   background: white;
   align-items: center;
   max-width: 350px;
   box-shadow: 0 5px 15px rgba(0, 0, 0);
+}
+
+.titleDesktop {
+  padding: 10px;
+  text-align: center;
+  font-size: 28px;
+  font-family:cursive;
+  font-weight: 800;
+  line-height: 30px;
+}
+
+.cardContent {
+  padding: 10px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 400;
+  font-family: sans-serif;
 }
